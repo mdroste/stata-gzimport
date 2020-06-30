@@ -42,6 +42,15 @@ Usage
 
 Using gzimport is very simple. All options for -import delimited- are supported. For convenience, this repository contains an example gzip-compressed dataset, auto.csv.gz, that you can play with for demonstration.
 
+For instance, the following gzimport command:
+```stata
+gzimport using auto.csv.gz, clear
+```
+
+is equivalent to extrating the contents of auto.csv.gz to auto.csv and running:
+```stata
+import delimited using auto.csv, clear
+```
 
 
 Acknowledgements
