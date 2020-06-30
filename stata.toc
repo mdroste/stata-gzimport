@@ -1,0 +1,4 @@
+
+v 0.30
+d Michael Droste, thedroste@gmail.com
+p 'gzimport': import gzip-compressed delimited text dataset

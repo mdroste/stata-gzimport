@@ -1,0 +1,8 @@
+v 0.30
+d
+d 'gzimport': decision trees and random forests in stata
+d
+d Distribution-Date: 20200630
+d
+f gzimport.ado
+f gzimport.sthlp
