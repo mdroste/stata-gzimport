@@ -27,7 +27,7 @@ gzimport requires Stata 16.0 or higher, since it uses Stata's built-in Python in
 Installation
 ---------------------------------
 
-Installing pyforest is very simple.
+Installing gzimport is very simple.
 
 1. First, make sure Python is installed on your computer so that Stata can interface with it. If Stata cannot find your Python installation, [this installation guide](https://raw.githubusercontent.com/mdroste/stata-pyforest/master/docs/install.md) that I wrote for another program might be useful.
 
