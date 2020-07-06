@@ -44,7 +44,8 @@ Using gzimport is very simple. All options for -import delimited- are supported.
 
 For instance, the following gzimport command:
 ```stata
-gzimport using auto.csv.gz, clear
+copy https://github.com/mdroste/stata-gzimport/raw/master/auto.csv.gz auto.csv.gz
+gzimport delimited using auto.csv.gz, clear
 ```
 
 is equivalent to extrating the contents of auto.csv.gz to auto.csv and running:
