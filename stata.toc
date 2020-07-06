@@ -1,4 +1,4 @@
 
-v 0.30
-d Michael Droste, thedroste@gmail.com
-p 'gzimport': import gzip-compressed delimited text dataset
+v 1.00
+d Michael Droste, mdroste@fas.harvard.edu
+p 'gzimport': import gzip-compressed delimited text datasets into Stata

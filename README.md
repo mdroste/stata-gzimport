@@ -10,7 +10,7 @@ gzimport
 
 Import gzip-compressed delimited data into Stata
 
-`version 0.3 30jun2020`
+`version 1.0 6jul2020`
 
 
 Overview

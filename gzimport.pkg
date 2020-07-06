@@ -1,9 +1,8 @@
-v 0.30
+v 1.00
 d
-d 'gzimport': decision trees and random forests in stata
+d 'gzimport': import gzip compressed delimited text files
 d
-d Distribution-Date: 20200630
+d Distribution-Date: 20200706
 d
 f gzimport.ado
 f gzimport.sthlp
-f auto.csv.gz

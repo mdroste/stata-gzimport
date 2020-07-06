@@ -1,9 +1,8 @@
+*! Version 1.00, 6jul2020, Michael Droste, mdroste@fas.harvard.edu
 *===============================================================================
 * Program: gzimport.ado 
 * Purpose: Import gzip compressed delimited text datasets into Stata
-* Version: 0.2
-* Date: July 2020
-* Author: Michael Droste and Michael Stepner
+* Authors: Michael Droste and Michael Stepner
 *===============================================================================
 
 program define gzimport
