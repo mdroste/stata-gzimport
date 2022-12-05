@@ -1,8 +1,8 @@
-*! Version 1.00, 6jul2020, Michael Droste, mdroste@fas.harvard.edu
+*! Version 1.10, 13sept2021, Michael Droste, mdroste@fas.harvard.edu
 *===============================================================================
-* Program: gzimport.ado 
-* Purpose: Import gzip compressed delimited text datasets into Stata
-* Authors: Michael Droste and Michael Stepner
+* Program: gzimport.ado
+* Purpose: Import gzip compressed data into Stata
+* Author: Michael Droste, Michael Stepner, and Matt Bell
 *===============================================================================
 
 program define gzimport
@@ -15,7 +15,7 @@ syntax anything using/, [*]
 
 * Make sure using file exists
 cap confirm file "`using'"
-if _rc!=0 {
+if _rc!=0 & substr("`using'", 1, 4)!="http" {
 	di as error "file `using' not found"
 	exit 601
 }
@@ -31,7 +31,7 @@ display "Importing gzipped data in `using'"
 tempfile gzimport_tempfile
 
 * Use Python to unzip
-python: gunzip("`using'",r"`gzimport_tempfile'")
+python: gunzip(r"`using'",r"`gzimport_tempfile'")
 
 * Import delimited
 import `anything' using `gzimport_tempfile', `options'
@@ -48,10 +48,23 @@ python:
 
 import gzip
 import shutil
+import urllib.parse
+import urllib.request
 
-def gunzip(filename,temp_file):
-	with gzip.open(filename,'rb') as f_in:
-		with open(temp_file,'wb') as f_out:
-			shutil.copyfileobj(f_in,f_out)
+
+def is_url(filename: str) -> bool:
+		return all(list(urllib.parse.urlparse(filename))[:2])
+
+
+def gunzip(filename: str, temp_file: str) -> None:
+		if is_url(filename):
+			response = urllib.request.urlopen(filename, timeout = 30)
+			with gzip.GzipFile(fileobj=response) as f_in:
+				with open(temp_file,'wb') as f_out:
+					shutil.copyfileobj(f_in,f_out)
+		else:
+			with gzip.open(filename,'rb') as f_in:
+				with open(temp_file,'wb') as f_out:
+					shutil.copyfileobj(f_in,f_out)
 
 end
