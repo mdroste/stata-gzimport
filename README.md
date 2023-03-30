@@ -57,7 +57,7 @@ import delimited using auto.csv, clear
 Acknowledgements
 ---------------------------------
 
-This program was (very quickly) written by [Michael Droste](https://github.com/mdroste) and [Michael Stepner](https://github.com/michaelstepner).
+This program was written by [Michael Droste](https://github.com/mdroste), [Michael Stepner](https://github.com/michaelstepner), and [Matt Bell](https://github.com/InaniMatt1)
 
 License
 ---------------------------------
